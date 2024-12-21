@@ -1,4 +1,4 @@
-name: "CI/CD Pipeline for .NET"
+name: "CI/CD Pipeline for Node.js"
 
 on:
   push:
@@ -10,18 +10,19 @@ on:
 
 jobs:
   ci-pipeline:
-    uses: guillipa1993/devops-pipelines-ci-cd/.github/workflows/dotnet-ci.yml@main
+    uses: guillipa1993/devops-pipelines-ci-cd/.github/workflows/nodejs-ci.yml@main
     with:
-      language: 'dotnet'
-      dotnet-version: '7.0'
+      language: 'node'
+      node-version: '16'
       report-language: 'English'
-      project-path: './src'
-      build-configuration: 'Release'
+      project-path: './'
+      build-configuration: 'Production'
       additional-install-commands: ''
+      build-command: 'npm run build'
       run-check-code-format: true
       run-code-analysis: true
       run-lint: true
-      environment-variables: 'DOTNET_ENV=Production'
+      environment-variables: 'NODE_ENV=Production'
     secrets:
       AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
       AZURE_STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }}
