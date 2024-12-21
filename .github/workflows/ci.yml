@@ -16,7 +16,6 @@ jobs:
       node-version: '16'
       report-language: 'English'
       project-path: './'
-      build-configuration: 'Production'
       additional-install-commands: ''
       build-command: 'npm run build'
       run-check-code-format: true
