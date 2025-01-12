@@ -14,7 +14,7 @@ jobs:
     with:
       language: 'node'
       node-version: '16'
-      report-language: 'Spanish'
+      report-language: 'German'
       project-path: './'
       additional-install-commands: ''
       build-command: 'npm run build'
