@@ -13,7 +13,7 @@
 // terminate the Node.js process with a non-zero exit code.
 process.on('unhandledRejection', err => {
   throw err;
-});
+//}); Añado un fallo
 
 const spawn = require('react-dev-utils/crossSpawn');
 const args = process.argv.slice(2);
